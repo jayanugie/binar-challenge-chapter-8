@@ -4,7 +4,7 @@ const cors = require('cors')
 const apiRouter = require('./server/routes')
 const errorHandler = require('./server/middlewares/errorHandler')
 const PORT = process.env.PORT || 4000
-const swaggerJSON = require('./swagger/swagger.json')
+const swaggerJSON = require('./swagger.json')
 const swaggerUI = require('swagger-ui-express')
 
 // middlewares
