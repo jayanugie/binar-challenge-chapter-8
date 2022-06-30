@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+import { Link } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className='App'>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Forms:
+          <ul>
+            <li>
+              <Link to='players/create'>Create New Player</Link>
+            </li>
+            <li>
+              <Link to='players/update'>Update Player</Link>
+            </li>
+            <li>
+              <Link to='players/search'>Search Player</Link>
+            </li>
+          </ul>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
     </div>
   );
 }
