@@ -1,64 +1,23 @@
-# Binar Academy Bootcamp - FSW - Chapter 8 - Challenge
+# Backend
 
-Ini adalah repository RESTful API yang menjadi basis untuk teman-teman berkreasi di challenge chapter 8. Ikuti petunjuk di bawah dengan seksama untuk memastikan teman-teman dapat menjalankan RESTful API.
+### Setup
 
-## Prasyarat
-Sebelum memulai menyentuh repository, pastikan komputer teman-teman memenuhi prasyarat berikut:
-- sudah install Node.js & NPM
-- sudah install PostgreSQL
-- sudah install git
+* Arahkan folder pada terminal dengan perintah `cd backend`.
+* Install node_modules dengan perintah `npm install`.
+* Isi konfigurasi di `/config/config.js` sesuai device Anda.
+* Buat database baru dengan perintah `sequelize db:create`.
+* Jalankan migrasi dengan perintah `sequelize db:migrate`.
+* Untuk menjalankan aplikasi ini lakukan perintah `npm run start`.
 
-## Project setup
-1. Fork repository ini. Ada tombol 'fork' di kanan atas atau klik https://github.com/berbinarbinar/binar-challenge-chapter-8.git. Lalu fork dan nanti akan muncul repository yang sama persis di akun teman-teman.
-2. Clone repository teman-teman yang sudah di fork 
+---
+### Dokumentasi Swagger
+* Buka dokumen swagger dengan mengakses di browser dengan alamat `localhost:4000/docs`.
+---
+### Mengakses API di Postman
+* `(POST) localhost:4000/api/v1/players` untuk membuat player baru dengan mengisi "username", "email", "password", "experience", "lvl" pada body json.
+* `(GET) localhost: 4000/api/v1/players` untuk melihat daftar players.
+* `(GET) localhost:4000/api/v1/players/:id` untuk melihat player berdasarkan id.
+* `(PUT) localhost:4000/api/v1/players/:id` untuk mengupdate player berdasarkan id dengan cara mengisi column dan isinya pada body json.
+* `(DELETE) localhost:4000/api/v1/players/:id` untuk mendelete player berdasarkan id.
+* `(POST) localhost: 4000/api/v1/players/exp/:id` untuk mengupdate column experience dengan cara mengisi di body json.
 
-```
-$ git clone https://github.com/[username_kalian]/binar-challenge-chapter-8.git
-```
-
-3. Pindah ke folder repository yang udah di clone dgn perintah 
-`cd binar-challenge-chapter-8`
-4.  Install dependencies dgn command `npm install`
-5.   Pastikan sudah membuat database sesuai konfigurasi di `/config/config.js` jika belum jalankan saja `npx sequelize db:create` dan juga pastikan kita harus berada pada directory `server` kalau belum `cd server`
-6.   Lanjutkan dengan menjalankan migrasi, sebelumnya kita harus masuk pada directory `server` dulu ya, `npx sequelize db:migrate`
-7.   Kamu juga bisa jalankan file seed yang sudah dibuat dengan cara `npx sequelize db:seed:all`
-### Run
-Untuk menjalankan aplikasi RESTful API, cukup jalankan perintah berikut
-```
-$ npm run start
-```
-
-## Tasks
-Jika teman-teman sudah berhasil menjalankan aplikasi RESTful API dari repository ini, teman-teman perlu melakukan dua hal:
-1. Membuat dokumentasi API dengan Swagger
-    - [ ] Baca code repository RESTful API ini baik-baik
-    - [ ] Buat dokumentasi untuk semua endpoint yang terdaftar di router
-    - [ ] Dokumentasi melingkupi : 
-        - [ ] HTTP method
-        - [ ] URL
-        - [ ] URL parameter (jika ada)
-        - [ ] Query parameter (jika ada)
-        - [ ] Request body (jika ada)
-        - [ ] format response
-    - [ ] Pasang dokumentasi Swagger dalam satu routing
-2. Membuat client-side application dengan React.js
-    - [ ] Buat folder baru, misalkan /client, kemudian buat project baru dalam folder tersebut dengan `$ npm init -y` atau `$ npx create-react-app client`
-    - [ ] Buat tampilan/UI untuk fitur berikut :
-        - [ ] Form untuk membuat player baru, dengan tombol Submit
-        - [ ] Form untuk mengedit player, dengan tombol Submit
-        - [ ] Form untuk pencarian player berdasarkan 4 kriteria pencarian : username, email, experience, dan lvl. jangan lupa juga tombol submit.
-    - [ ] Kita belum belajar mengintegrasikan back-end dan front-end. Jadi untuk challenge ini, ketika di klik tombol submit tampilkan semua input sebagai satu elemen HTML baru
-        - [ ] Untuk form membuat atau edit player, tampilkan info username, email, dll setelah di klik submit. 
-        - [ ] Untuk form mencari player, tampilkan ulang input kriteria username, email, experience, dan lvl.
-    - [ ] Jalankan sebagai aplikasi client-side (npm run start di folder client (buat run react app))
-
-## Caveats / Batasan
-- Tugas nomor 1 dan 2 dibuat dalam repository yang sama dengan repository RESTful API. Dengan kata lain, teman-teman bertugas mengembangkan repository RESTful API ini menjadi repository full-stack (RESTful API + client-side + documentation)
-- Code existing yang ada dalam folder /app tidak boleh diubah/dihapus, kecuali bagian config db. Yang diperbolehkan hanya penambahan line untuk memenuhi challenge. 
-- Jika teman-teman menemukan error/bug dalam code, silakan buat issue di repository ini atau sampaikan ke tim Binar Academy
-- Pastikan folder node_modules masuk dalam .gitignore, baik untuk RESTful API maupun client-side.
-- Nantinya, aplikasi RESTful API dan client-side akan berjalan sebagai 2 aplikasi berbeda. Pastikan keduanya bisa berjalan berbarengan tanpa ada issue.
-
-## Petunjuk Submission
-- Challenge di submit paling lambat hari Senin di minggu ketiga chapter 8, pukul 23:59 WIB.
-- metode submission: kirim email ke mentor dan bagian akademik Binar, berisi link repository teman-teman (yang di fork) di Gitlab.
